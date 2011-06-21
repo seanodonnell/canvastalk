@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./fonts/stylesheet.css"></link>
+        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"></link>
+        <script src="./js/jquery-1.6.1.min.js"></script>
+        <script src="./js/talktool.js"></script>
+    </head>
+    <body>
+    
+    
+<script>var firstpage="page_1.html"; var lastpage="page_22.html";</script>
+<h1>Images and Animation</h1>
+
+<div class="highlight source"><pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mycanvas&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">dlogo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+<span class="nx">dlogo</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;./imgs/dwlogo.gif&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">rotation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">rotation</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">64</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">dlogo</span><span class="p">,</span> <span class="mi">100</span><span class="o">-</span><span class="nx">dlogo</span><span class="p">.</span><span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="o">-</span><span class="nx">dlogo</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+                  <span class="nx">dlogo</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">dlogo</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+    <span class="nx">rotation</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">draw</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+</pre></div>
+
+<canvas id="mycanvas" width="200" height="200"  style="display:block;border:1px solid black;width:200px;margin-left:auto;margin-right:auto;" >displayed if no canvas support</canvas >
+<script>
+var canvas = document.getElementById("mycanvas");
+var dlogo = new Image();
+dlogo.src = './imgs/dwlogo.gif';
+var rotation = 0;
+function draw()
+{
+    canvas.width = canvas.width;
+    var context = canvas.getContext('2d');
+    context.translate(100, 100);
+    context.rotate(rotation * Math.PI / 64);
+    context.translate(-100, -100);
+    context.drawImage(dlogo, 100-dlogo.width/2, 100-dlogo.height/2,
+                        dlogo.width, dlogo.height);
+    rotation++;
+}
+setInterval(draw,10);
+</script>
+
+
+    </body>
+</html>

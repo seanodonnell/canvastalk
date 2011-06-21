@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./fonts/stylesheet.css"></link>
+        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"></link>
+        <script src="./js/jquery-1.6.1.min.js"></script>
+        <script src="./js/talktool.js"></script>
+    </head>
+    <body>
+    
+    
+<script>var firstpage="page_1.html"; var lastpage="page_22.html";</script>
+<h1>Using it</h1>
+
+
+<div class="highlight source"><pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mycanvas&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">&quot;rgb(0,255,0)&quot;</span><span class="p">;</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">quadraticCurveTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">150</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+</pre></div>
+
+<canvas id="mycanvas" width="200" height="200"  style="display:block;border:1px solid black;width:200px;margin-left:auto;margin-right:auto;" >displayed if no canvas support</canvas >
+<script>
+var canvas = document.getElementById("mycanvas");
+var context = canvas.getContext('2d');
+context.strokeStyle = "rgb(0,255,0)";
+context.beginPath();
+context.moveTo(30,30);
+context.lineTo(150,150);
+context.quadraticCurveTo(60,70,70,150);
+context.lineTo(30,30);
+context.closePath();
+context.stroke();
+</script>
+
+
+    </body>
+</html>

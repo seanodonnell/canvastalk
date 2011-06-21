@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./fonts/stylesheet.css"></link>
+        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"></link>
+        <script src="./js/jquery-1.6.1.min.js"></script>
+        <script src="./js/talktool.js"></script>
+    </head>
+    <body>
+    
+    
+<script>var firstpage="page_1.html"; var lastpage="page_22.html";</script>
+<h1>Images and Animation</h1>
+<canvas id="mycanvas" width="720" height="320" style="display:block;width:720px;height:320px;margin-left:auto;margin-right:auto;border:1px solid #000000"></canvas>
+<video id="dmovie" src="./imgs/cod.ogg" style="display:block;width:720px;margin-left:auto;margin-right:auto;"></video>
+
+<script>
+var canvas = document.getElementById("mycanvas");
+var dlogo = new Image();
+dlogo.src = './imgs/dwlogo.gif';
+var dmovie = document.getElementById("dmovie");
+dmovie.loop = true;
+dmovie.play();
+var context = canvas.getContext('2d');
+var x = 0;
+function draw()
+{
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.save();
+    context.setTransform(1, 0, .1, 1, 0, 0);
+    context.drawImage(dmovie, 20, 0);
+    context.restore();
+    context.drawImage(dlogo, x, 200,100, 100);
+    x++;
+    if(x>720)
+    {
+        x = -200;
+    }
+}
+setInterval(draw, 10);
+</script>
+
+
+    </body>
+</html>
